@@ -1,0 +1,25 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build ActionScript",	
+			"type": "actionscript",
+			"debug": true,
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+		},
+		{
+			"label": "Build Typescript",
+			"command": "tsc"
+		},
+		{
+			"label": "Build Typescript and ActionScript Electron",
+			"dependsOn": [
+				"Build Typescript",
+				"Build ActionScript"
+			]
+		}
+	]
+}

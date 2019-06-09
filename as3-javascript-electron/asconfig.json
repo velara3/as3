@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+      "source-map": true,
+		"html-template": "template.html",
+		"targets": ["js"]
+   },
+   "additionalOptions": "-warn-public-vars=false",
+	"files":
+	[
+		"src/Main.as"
+	]
+}
