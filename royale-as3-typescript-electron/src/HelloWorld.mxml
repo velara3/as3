@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<js:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+   xmlns:js="library://ns.apache.org/royale/express" 
+   xmlns:html="library://ns.apache.org/royale/html" 
+   xmlns:j="library://ns.apache.org/royale/jewel"
+   applicationComplete="appComplete(event)">
+
+   <fx:Script>
+      <![CDATA[
+
+      /**
+       * Electron and Apache Royale example project
+       * 1.0.1
+       * 
+       * In this example we will send a message to the main process 
+       * and receive one in return
+       * 
+       * We will define the electron and ipcRenderer as public vars
+       * Currently this generates an error:
+       * 
+       * > Warning: public var may not work in minified JS output.  Use getter/setter instead.
+       * 
+       * 3 ways to handle
+       * 
+       * 1. add compiler option to remove
+       *    -warn-public-vars=false
+       * 2. define references inside your function
+       * 3. use getters and setters
+       * 
+       * We are using the compiler option
+       * 
+       */
+
+      public var electron:Object = window["require"] ? window["require"]("electron") : null;
+      public var ipcRenderer:Object = electron ? electron.ipcRenderer : null;
+      public const RENDERER_MESSAGE:String = "rendererMessage";
+      public const CALL_COMMAND:String = "callCommand";
+
+      /**
+       * On application complete add listeners from the main process
+       */
+      public function appComplete(event:Event):void {
+
+         // check if electron is available
+         if (electron) {
+            // add listeners from our main process
+            ipcRenderer.on(RENDERER_MESSAGE, rendererMessageHander);
+         }
+         else {
+            helloLabel.text = "Electron is not found";
+         }
+      }
+
+      public function clickHandler(event:Event):void {
+
+         // check for electron
+         if (electron) {
+            ipcRenderer.send(CALL_COMMAND, "hello");
+         }
+         else {
+            helloLabel.text = "Electron is not found";
+         }
+      }
+
+      public function rendererMessageHander(event:Object, data:String):void {
+         trace("Data received:", data);
+         helloLabel.text = data;
+      }
+
+      ]]>
+   </fx:Script>
+   <js:initialView>
+      <js:View>
+         <j:Button id="helloButton" text="Say Hello" x="20" y="20" click="clickHandler(event)"/>
+         <js:Label id="helloLabel" text="" x="240" y="25"/>
+      </js:View>
+   </js:initialView>
+</js:Application>

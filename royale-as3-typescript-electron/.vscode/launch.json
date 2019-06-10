@@ -1,0 +1,28 @@
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "Debug Renderer Electron Process",
+         "type": "electron",
+         "request": "launch",
+         "preLaunchTask": "Build Typescript and ActionScript Electron",
+         "appDir": "${workspaceRoot}/bin",
+         "sourceMaps": true,
+         "timeout": 20000
+      },
+      {
+         "name": "Debug Main Electron Process",
+         "type": "node",
+         "request": "launch",
+         "preLaunchTask": "Build Typescript and ActionScript Electron",
+         "cwd": "${workspaceRoot}/bin",
+         "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+         "windows": {
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+         },
+         "args" : ["."],
+         "outputCapture": "console",
+         "timeout": 20000
+      }
+   ]
+}
