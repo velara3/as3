@@ -11,12 +11,9 @@ package {
 			messageLabel.textContent = "This is AS3 (click me)";
          messageLabel.style.setProperty("cursor", "pointer");
          messageLabel.id = "messageLabel";
-			document.body.appendChild( messageLabel );
+			document.body.appendChild( messageLabel as Node );
          messageLabel.addEventListener("click", clickHandler);
 
-         // add listeners from our electron main.js
-         //console.log("Hello", process.release.name, process.version);
-         //dns.lookup("localhost", null, dnsLookupCallback);
          ipcRenderer.on(RENDERER_MESSAGE, rendererMessageHandler);
       }
 

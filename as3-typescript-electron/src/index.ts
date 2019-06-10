@@ -1,8 +1,6 @@
 import { RoadHouse } from "./RoadHouse";
 import { app, BrowserWindow, ipcMain } from 'electron';
 
-console.log("dir:" + __dirname)
-
 // Keep a global reference of the window object. If you don't, the window will
 // close automatically when the JavaScript object is garbage collected.
 let win:BrowserWindow|null;
@@ -42,7 +40,7 @@ app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
   //if (process.platform !== 'darwin') {
-    app.quit()
+    app.quit();
   //}
 })
 
