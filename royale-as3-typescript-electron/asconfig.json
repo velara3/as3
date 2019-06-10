@@ -2,9 +2,10 @@
 	"compilerOptions": {
       "source-map": true,
 		"html-template": "template.html",
-      "theme": "${royalelib}/themes/JewelTheme/src/main/resources/defaults.css"
+      "theme": "${royalelib}/themes/JewelTheme/src/main/resources/defaults.css",
+      "targets": ["JSRoyale"]
    },
-   "additionalOptions": "-warn-public-vars=false",
+   "additionalOptions": "-warn-public-vars=false -remove-circulars -js-output-optimization=skipAsCoercions",
    "files":
    [
       "src/HelloWorld.mxml"

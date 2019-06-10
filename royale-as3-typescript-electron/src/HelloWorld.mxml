@@ -3,6 +3,8 @@
    xmlns:js="library://ns.apache.org/royale/express" 
    xmlns:html="library://ns.apache.org/royale/html" 
    xmlns:j="library://ns.apache.org/royale/jewel"
+   xmlns:jss="library://ns.apache.org/royale/basic"
+   xmlns:models="models.*"
    applicationComplete="appComplete(event)">
 
    <fx:Script>
@@ -30,11 +32,13 @@
        * We are using the compiler option
        * 
        */
+      import vos.IconListVO;
 
       public var electron:Object = window["require"] ? window["require"]("electron") : null;
       public var ipcRenderer:Object = electron ? electron.ipcRenderer : null;
       public const RENDERER_MESSAGE:String = "rendererMessage";
       public const CALL_COMMAND:String = "callCommand";
+      public var iconList:IconListVO = new IconListVO("test");
 
       /**
        * On application complete add listeners from the main process
@@ -69,10 +73,47 @@
 
       ]]>
    </fx:Script>
+   <fx:Style>
+        @namespace "http://www.w3.org/1999/xhtml";
+        @namespace j "library://ns.apache.org/royale/jewel";
+
+        .iconListItemRenderer
+        {
+            IItemRenderer: ClassReference("renderers.ListRenderer");
+        }
+
+        .iconListItemRenderer .fonticon
+        {
+            margin-right: 24px;
+        }
+   </fx:Style>
+
+   <j:model>
+      <models:ListsModel id="listModel"/>
+	</j:model>
+
    <js:initialView>
       <js:View>
-         <j:Button id="helloButton" text="Say Hello" x="20" y="20" click="clickHandler(event)"/>
-         <js:Label id="helloLabel" text="" x="240" y="25"/>
+         <js:beads>
+            <j:HorizontalCenteredLayout gap="10" />
+            <jss:ApplicationDataBinding/>
+         </js:beads>
+         <j:Button id="helloButton" text="Say Hello" click="clickHandler(event)"/>
+         <js:Label id="helloLabel" text="" />
+         <j:View>
+            <j:Card width="270">
+                <html:H3 text="Jewel List With ItemRenderer"/>
+                
+                <j:List width="100%" height="200" className="iconListItemRenderer">
+                    <j:beads>
+                        <js:ConstantBinding
+                           sourceID="listModel"
+                           sourcePropertyName="iconListData"
+                           destinationPropertyName="dataProvider" />
+                    </j:beads>
+                </j:List>
+            </j:Card>
+         </j:View>
       </js:View>
    </js:initialView>
 </js:Application>
