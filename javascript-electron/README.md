@@ -1,2 +1,2 @@
-# Examples
-This project creates a desktop app in Electron using JavaScript for the page code and JavaScript for the main process. It is a basic making sure everything works example and does not use AS3. 
+# Electron Example
+This project creates a desktop app in Electron using JavaScript for the page code and JavaScript for the main process. It is a basic, "making sure Electron works" example and does not use AS3. 
