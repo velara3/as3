@@ -1,8 +1,8 @@
 {
-  "name": "as3-javascript-electron",
+  "name": "as3-typescript-electron",
   "version": "1.0.0",
-  "description": "Electron, AS3 and JavaScript",
-  "main": "index.js",
+  "description": "Electron, AS3 and TypeScript",
+  "main": "bin/index.js",
   "scripts": {
     "test": "start electron ."
   },

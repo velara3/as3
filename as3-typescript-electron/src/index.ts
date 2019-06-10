@@ -1,13 +1,11 @@
 import { RoadHouse } from "./RoadHouse";
-
-//import { RoadHouse } from "./RoadHouse";
-
 import { app, BrowserWindow, ipcMain } from 'electron';
-//const { RoadHouse } = require ("./RoadHouse"); // import an external class
+
+console.log("dir:" + __dirname)
 
 // Keep a global reference of the window object. If you don't, the window will
 // close automatically when the JavaScript object is garbage collected.
-let win:BrowserWindow;
+let win:BrowserWindow|null;
 
 function createWindow () {
   // Create the browser window.
@@ -20,7 +18,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  win.loadFile('bin/js-debug/index.html')
+  win.loadFile(`${__dirname}/js-debug/index.html`);
 
   // Open the DevTools.
   //win.webContents.openDevTools()
@@ -30,7 +28,7 @@ function createWindow () {
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
-    win = null
+    win = null;
   })
 }
 
@@ -43,9 +41,9 @@ app.on('ready', createWindow)
 app.on('window-all-closed', () => {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
+  //if (process.platform !== 'darwin') {
     app.quit()
-  }
+  //}
 })
 
 app.on('activate', () => {
@@ -60,8 +58,8 @@ app.on('activate', () => {
 // code. You can also put them in separate files and require them here.
 ipcMain.on("callCommand", async function(event:Event, item:any) {
   console.log("Main process received message");
-  var roadHouse:RoadHouse = new RoadHouse("Hello");
-  console.log("Is running:" + roadHouse.isRunning);
+  var roadHouse:RoadHouse = new RoadHouse();
+  console.log("Is running:" + roadHouse.isRunning());
 
   var output = "Message received. " + process.release.name + " " + process.version;
   win.webContents.send("rendererMessage", "output:" + output);

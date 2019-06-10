@@ -6,30 +6,23 @@
          "type": "electron",
          "request": "launch",
          "preLaunchTask": "Build Typescript and ActionScript Electron",
-         "appDir": "${workspaceRoot}/",
+         "appDir": "${workspaceRoot}/bin",
          "sourceMaps": true,
-         "timeout": 30000
+         "timeout": 20000
       },
       {
          "name": "Debug Main Electron Process",
          "type": "node",
          "request": "launch",
          "preLaunchTask": "Build Typescript and ActionScript Electron",
-         "cwd": "${workspaceRoot}",
+         "cwd": "${workspaceRoot}/bin",
          "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
          "windows": {
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
          },
          "args" : ["."],
-         "outputCapture": "std"
-      },
-      {
-         "name": "Debug in Firefox",
-         "type": "firefox",
-         "request": "launch",
-         "reAttach": true,
-         "preLaunchTask": "Build Typescript and ActionScript Electron",
-         "file": "${workspaceFolder}/index.html"
+         "outputCapture": "console",
+         "timeout": 20000
       }
    ]
 }

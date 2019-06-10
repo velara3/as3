@@ -12,13 +12,16 @@
 		},
 		{
 			"label": "Build Typescript",
-			"command": "tsc"
+			"command": "tsc",
+			"problemMatcher": [
+				 "$tsc"
+			]
 		},
 		{
 			"label": "Build Typescript and ActionScript Electron",
 			"dependsOn": [
-				"Build Typescript",
-				"Build ActionScript"
+				"Build ActionScript",
+				"Build Typescript"
 			]
 		}
 	]
