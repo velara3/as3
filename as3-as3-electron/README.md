@@ -1,0 +1,2 @@
+# Electron Example
+This project creates a desktop app in Electron using ActionScript 3 and Royale for the page code, the renderer, and ActionScript 3 for the main process. There should be fall back support for JavaScript but has not been tested. 

@@ -1,0 +1,40 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build Main ActionScript",
+			"type": "actionscript",
+			"debug": true,
+			"asconfig": "asconfig.main.json",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Build Renderer ActionScript",
+			"type": "actionscript",
+			"debug": true,
+			"asconfig": "asconfig.renderer.json",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": true,
+				"clear": false
+			}
+		},
+		{
+			"label": "Build Main ActionScript and Renderer ActionScript",
+			"dependsOn": [
+				"Build Renderer ActionScript",
+				"Build Main ActionScript"
+			]
+		}
+	]
+}

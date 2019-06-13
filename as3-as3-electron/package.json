@@ -1,0 +1,12 @@
+{
+  "name": "as3-actionscript-electron",
+  "version": "1.0.0",
+  "description": "Electron, AS3 and ActionScript",
+  "main": "bin/js-debug/Main.js",
+  "scripts": {
+    "test": "start electron ."
+  },
+  "devDependencies": {
+    "electron": "^5.0.3"
+  }
+}

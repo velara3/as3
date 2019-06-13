@@ -1,0 +1,11 @@
+{
+	"config": "node",
+	"compilerOptions": {
+      "source-map": true
+	},
+   "additionalOptions": "-warn-public-vars=false",
+	"files":
+	[
+		"src/Main.as"
+	]
+}
