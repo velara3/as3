@@ -1,11 +1,15 @@
 # Examples
-Example projects for Apache Royale, AS3 projects, ActionScript, Typescript, ActionScript, Electron and Visual Studio Code and so on. 
+Example starter projects for creating a desktop application in Electron using Apache Royale, ActionScript 3, Typescript or JavaScript using Visual Studio Code. 
 
 Guides: 
 - How to create a Desktop Application with Royale and Electron https://royale.codeoscopic.com/how-to-create-a-desktop-application-with-royale-and-electron/
 
 Projects:
-- JavaScript Electron - This project creates a desktop app in Electron using JavaScript for the page code and JavaScript for the main process. 
-- AS3 Renderer, JavaScript, Electron - This project creates a desktop app in Electron using ActionScript 3 for the page code and JavaScript for the main process. 
-- AS3 Renderer, TypeScript, Electron - This project creates a desktop app in Electron using ActionScript 3 for the page code and TypeScript for the main process. 
-- AS3 Renderer, TypeScript Main, Royale, Electron - This project creates a desktop with Electron using Apache Royale and ActionScript 3 for the page code and TypeScript for the main process. 
+- [JavaScript Electron](https://github.com/velara3/as3/tree/master/javascript-electron) - This project creates a desktop app in Electron using JavaScript for the page code and JavaScript for the main process. It is a working Electron example not using AS3. 
+- [AS3 Renderer, JavaScript, Electron](https://github.com/velara3/as3/tree/master/as3-javascript-electron) - This project creates a desktop app in Electron using ActionScript 3 for the page code and JavaScript for the main process. 
+- [AS3 Renderer, TypeScript, Electron](https://github.com/velara3/as3/tree/master/as3-typescript-electron) - This project creates a desktop app in Electron using ActionScript 3 for the page code and TypeScript for the main process. 
+- [AS3 Renderer, TypeScript, Royale, Electron](https://github.com/velara3/as3/tree/master/as3-royale-typescript-electron) - This project creates a desktop app with Electron using Apache Royale and ActionScript 3 for the page code and TypeScript for the main process. 
+- [AS3 Renderer, AS3 Main, Electron](https://github.com/velara3/as3/tree/master/as3-as3-electron) - This project creates a desktop app with Electron using ActionScript 3 for the page code and ActionScript 3 for the main process.
+
+
+If you appreciate these projects please support my work at [www.velara3.com](https://www.velara3.com). 
