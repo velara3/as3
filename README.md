@@ -12,4 +12,4 @@ Projects:
 - [AS3 Renderer, AS3 Main, Electron](https://github.com/velara3/as3/tree/master/as3-as3-electron) - This project creates a desktop app with Electron using ActionScript 3 for the page code and ActionScript 3 for the main process.
 
 
-If you appreciate these projects please support my work at [www.velara3.com](https://www.velara3.com). 
+If you appreciate these starter projects please support my work at [www.velara3.com](https://www.velara3.com). 
