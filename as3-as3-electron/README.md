@@ -13,7 +13,9 @@ In the Main.as process you load in the web page that you will be using as a UI.
 
 Both the Main.as and Renderer.as ActionScript 3 files are transcoded to JavaScript by mxmljsc called by the [NextGenAS3](https://github.com/BowlerHatLLC/vscode-as3mxml) plugin for VSC. The Renderer.as is initiated as a class on the web page you load in. 
 
-There is third part of this and that's the template.html page in the root directory. You can use Web Export plugin for Adobe XD to create the UI and using the template value, export a template that helps you visually design your application. An example of this will be provided soon or available upon request. 
+There is third part of this and that's the template.html page in the root directory. When you use mxmljsc to convert AS3 to JS it creates an index.html page from the template page you have listed in the asconfig.json. 
+
+Note: You can use Web Export plugin for Adobe XD to create the UI and using the template value, export a template that helps you visually design your application. An example project of this will be provided soon or available upon request. 
 
 # To use:
 
@@ -32,6 +34,22 @@ the page you are loading in the Main.as:
 
     var homePage:String = __dirname + "/index.html";
     win.loadFile(homePage);
+    
+the template page you are loading in the asconfig.json:
+
+    {
+        "compilerOptions": {
+          "source-map": true,
+            "html-template": "template.html",
+            "targets": ["js"]
+       },
+       "additionalOptions": "-warn-public-vars=false",
+        "files":
+        [
+            "src/Renderer.as"
+        ]
+    }
+
     
 and the page you are loading in the package.json: 
 
